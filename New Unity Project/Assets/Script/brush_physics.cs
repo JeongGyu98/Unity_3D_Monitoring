@@ -9,17 +9,14 @@ public class brush_physics : MonoBehaviour
 
     private RaycastHit hitInfo;
     private LayerMask layerMask;
+    private Color initialColor;
+    private Color targetColor;
+    private Material hitObjectMaterial;
     Renderer capsuleColor;
-
-    float color_R = 214.0f;
-    float color_G = 182.0f;
-    float color_B = 110.0f;
-    float updateColor = 0.5f;
-    string objectName;
-
     void Start()
     {
         capsuleColor = gameObject.GetComponent<MeshRenderer>();
+        targetColor = new Color(1.0f ,1.0f ,1.0f ,1.0f);
     }
 
 
@@ -29,19 +26,33 @@ public class brush_physics : MonoBehaviour
 
         if(Physics.Raycast(transform.position,  transform.forward, out hitInfo, 0.2f))
         {
-            color_B += updateColor;
-            color_G += updateColor;
-            color_R += updateColor;
- 
-            Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.red);
+             Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.red);
+            
 
-            objectName = hitInfo.collider.name;
-            //capsuleColor.material.color = Color.magenta;
+            initialColor = hitInfo.collider.GetComponent<MeshRenderer>().material.color;
+            Debug.Log(initialColor);
+           
+            if(initialColor.r <= 1.0f) {
+                initialColor.r += 0.005f;
+            } 
+            if (initialColor.g <= 1.0f){
+                initialColor.g += 0.005f;
+            }
+            if(initialColor.b<= 1.0f){
+                initialColor.b += 0.005f;
+            }
+
+            hitInfo.transform.GetComponent<MeshRenderer>().material.color = initialColor;
+            //timeLeft = 1.0f;
+            // hitInfo.collider.GetComponent<MeshRenderer>().material.color = Color.Lerp(initialColor, 
+            //                                                                                 targetColor, Mathf.PingPong(Time.time, 1));
+            //timeLeft -= Time.deltaTime;                                                                            
+            //objectName = hitInfo.collider.name;
 
             //Debug.Log(capsuleColor.material.GetColor("_Color"));
-            Debug.Log("hit point: " + hitInfo.collider.name);
+            //Debug.Log("hit point: " + hitInfo.collider.name);
 
-            hitInfo.transform.GetComponent<MeshRenderer>().material.color = new Color(color_R / 255, color_G / 255, color_B / 255);
+            //hitInfo.transform.GetComponent<MeshRenderer>().material.color = new Color(color_R / 255, color_G / 255, color_B / 255);
             //GameObject.Find(objectName).GetComponent<MeshRenderer>().material.color = new Color(GameObject.Find(objectName).GetComponent<MeshRenderer>().material.color.r + updateColor, color_G / 255, color_B / 255);
 
         }

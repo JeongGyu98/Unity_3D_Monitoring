@@ -56,19 +56,19 @@ static Il2CppMethodPointer s_methodPointers[13] =
 };
 static const int32_t s_InvokerIndices[13] = 
 {
-	1111,
-	1111,
-	1111,
-	1111,
-	1111,
-	944,
-	1111,
-	1111,
-	1111,
-	1111,
-	1111,
-	1111,
-	1111,
+	1113,
+	1113,
+	1113,
+	1113,
+	1113,
+	946,
+	1113,
+	1113,
+	1113,
+	1113,
+	1113,
+	1113,
+	1113,
 };
 extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;

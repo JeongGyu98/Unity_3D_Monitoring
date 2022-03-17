@@ -63,8 +63,6 @@ struct Mesh_t2F5992DBA650D5862B43D3823ACD997132A57DA6;
 struct MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B;
 // UnityEngine.MonoBehaviour
 struct MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A;
-// UnityEngine.Object
-struct Object_tF2F3778131EFF286AF62B7B013A170F95A91571A;
 // UnityEngine.UI.RectMask2D
 struct RectMask2D_tD909811991B341D752E4C978C89EFB80FA7A2B15;
 // UnityEngine.RectTransform
@@ -92,6 +90,7 @@ struct brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F;
 // UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 struct CullStateChangedEvent_t9B69755DEBEF041C3CC15C3604610BDD72856BD4;
 
+IL2CPP_EXTERN_C RuntimeClass* Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral0AFD19A42DC90AD36C0832CE09A265DAEEB47FC1;
 IL2CPP_EXTERN_C String_t* _stringLiteral0D3C638079F16D8B9988BCE52943958B515CB1E4;
@@ -120,7 +119,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralBCF7209A7BCA73D2126E58A852A6028D60240EB7
 IL2CPP_EXTERN_C String_t* _stringLiteralD11CFB3B870FFDF8CEC4583E6C12FA0B8FA1A018;
 IL2CPP_EXTERN_C String_t* _stringLiteralD571492C85221F94D2E19AF8DC43D349C42B287E;
 IL2CPP_EXTERN_C String_t* _stringLiteralE72F744D6A061D822F4D37B7EC1481EF52F60545;
-IL2CPP_EXTERN_C String_t* _stringLiteralEE6ACA91382FDBD299B9F2D89951873E75ED4B6E;
 IL2CPP_EXTERN_C String_t* _stringLiteralF8B42BAC34F113ED20651C2DC6EF619442FA8134;
 IL2CPP_EXTERN_C String_t* _stringLiteralFF661EDFEDB3F5A4E46626F404017468646E9A4A;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisAnimation_t8C4FD9513E57F59E8737AD03938AAAF9EFF2F0D8_mACBD944B2C02DA6B1A24E69FE6501EE674A5B3F3_RuntimeMethod_var;
@@ -1138,18 +1136,14 @@ public:
 	RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89  ___hitInfo_4;
 	// UnityEngine.LayerMask brush_physics::layerMask
 	LayerMask_t5FA647D8C300EA0621360CA4424717C3C73190A8  ___layerMask_5;
+	// UnityEngine.Color brush_physics::initialColor
+	Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  ___initialColor_6;
+	// UnityEngine.Color brush_physics::targetColor
+	Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  ___targetColor_7;
+	// UnityEngine.Material brush_physics::hitObjectMaterial
+	Material_t8927C00353A72755313F046D0CE85178AE8218EE * ___hitObjectMaterial_8;
 	// UnityEngine.Renderer brush_physics::capsuleColor
-	Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * ___capsuleColor_6;
-	// System.Single brush_physics::color_R
-	float ___color_R_7;
-	// System.Single brush_physics::color_G
-	float ___color_G_8;
-	// System.Single brush_physics::color_B
-	float ___color_B_9;
-	// System.Single brush_physics::updateColor
-	float ___updateColor_10;
-	// System.String brush_physics::objectName
-	String_t* ___objectName_11;
+	Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * ___capsuleColor_9;
 
 public:
 	inline static int32_t get_offset_of_hitInfo_4() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___hitInfo_4)); }
@@ -1168,54 +1162,38 @@ public:
 		___layerMask_5 = value;
 	}
 
-	inline static int32_t get_offset_of_capsuleColor_6() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___capsuleColor_6)); }
-	inline Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * get_capsuleColor_6() const { return ___capsuleColor_6; }
-	inline Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C ** get_address_of_capsuleColor_6() { return &___capsuleColor_6; }
-	inline void set_capsuleColor_6(Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * value)
+	inline static int32_t get_offset_of_initialColor_6() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___initialColor_6)); }
+	inline Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  get_initialColor_6() const { return ___initialColor_6; }
+	inline Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * get_address_of_initialColor_6() { return &___initialColor_6; }
+	inline void set_initialColor_6(Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  value)
 	{
-		___capsuleColor_6 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___capsuleColor_6), (void*)value);
+		___initialColor_6 = value;
 	}
 
-	inline static int32_t get_offset_of_color_R_7() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___color_R_7)); }
-	inline float get_color_R_7() const { return ___color_R_7; }
-	inline float* get_address_of_color_R_7() { return &___color_R_7; }
-	inline void set_color_R_7(float value)
+	inline static int32_t get_offset_of_targetColor_7() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___targetColor_7)); }
+	inline Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  get_targetColor_7() const { return ___targetColor_7; }
+	inline Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * get_address_of_targetColor_7() { return &___targetColor_7; }
+	inline void set_targetColor_7(Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  value)
 	{
-		___color_R_7 = value;
+		___targetColor_7 = value;
 	}
 
-	inline static int32_t get_offset_of_color_G_8() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___color_G_8)); }
-	inline float get_color_G_8() const { return ___color_G_8; }
-	inline float* get_address_of_color_G_8() { return &___color_G_8; }
-	inline void set_color_G_8(float value)
+	inline static int32_t get_offset_of_hitObjectMaterial_8() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___hitObjectMaterial_8)); }
+	inline Material_t8927C00353A72755313F046D0CE85178AE8218EE * get_hitObjectMaterial_8() const { return ___hitObjectMaterial_8; }
+	inline Material_t8927C00353A72755313F046D0CE85178AE8218EE ** get_address_of_hitObjectMaterial_8() { return &___hitObjectMaterial_8; }
+	inline void set_hitObjectMaterial_8(Material_t8927C00353A72755313F046D0CE85178AE8218EE * value)
 	{
-		___color_G_8 = value;
+		___hitObjectMaterial_8 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___hitObjectMaterial_8), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_color_B_9() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___color_B_9)); }
-	inline float get_color_B_9() const { return ___color_B_9; }
-	inline float* get_address_of_color_B_9() { return &___color_B_9; }
-	inline void set_color_B_9(float value)
+	inline static int32_t get_offset_of_capsuleColor_9() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___capsuleColor_9)); }
+	inline Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * get_capsuleColor_9() const { return ___capsuleColor_9; }
+	inline Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C ** get_address_of_capsuleColor_9() { return &___capsuleColor_9; }
+	inline void set_capsuleColor_9(Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * value)
 	{
-		___color_B_9 = value;
-	}
-
-	inline static int32_t get_offset_of_updateColor_10() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___updateColor_10)); }
-	inline float get_updateColor_10() const { return ___updateColor_10; }
-	inline float* get_address_of_updateColor_10() { return &___updateColor_10; }
-	inline void set_updateColor_10(float value)
-	{
-		___updateColor_10 = value;
-	}
-
-	inline static int32_t get_offset_of_objectName_11() { return static_cast<int32_t>(offsetof(brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F, ___objectName_11)); }
-	inline String_t* get_objectName_11() const { return ___objectName_11; }
-	inline String_t** get_address_of_objectName_11() { return &___objectName_11; }
-	inline void set_objectName_11(String_t* value)
-	{
-		___objectName_11 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___objectName_11), (void*)value);
+		___capsuleColor_9 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___capsuleColor_9), (void*)value);
 	}
 };
 
@@ -1716,6 +1694,8 @@ inline MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * GameObject_GetCo
 {
 	return ((  MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * (*) (GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 *, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_mCE43118393A796C759AC5D43257AB2330881767D_gshared)(__this, method);
 }
+// System.Void UnityEngine.Color::.ctor(System.Single,System.Single,System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Color__ctor_m679019E6084BF7A6F82590F66F5F695F6A50ECC5 (Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * __this, float ___r0, float ___g1, float ___b2, float ___a3, const RuntimeMethod* method);
 // UnityEngine.Transform UnityEngine.Component::get_transform()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F (Component_t62FBC8D2420DA4BE9037AFE430740F6B3EECA684 * __this, const RuntimeMethod* method);
 // UnityEngine.Vector3 UnityEngine.Transform::get_position()
@@ -1734,10 +1714,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC6
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_DrawRay_m918D1131BACEBD7CCEA9D9BFDF3279F6CD56E121 (Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  ___start0, Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  ___dir1, Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  ___color2, const RuntimeMethod* method);
 // UnityEngine.Collider UnityEngine.RaycastHit::get_collider()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Collider_t5E81E43C2ECA0209A7C4528E84A632712D192B02 * RaycastHit_get_collider_m13A3DE16FBC631E0A1F987E0B22CE70AF8AB539E (RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * __this, const RuntimeMethod* method);
-// System.String UnityEngine.Object::get_name()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A * __this, const RuntimeMethod* method);
-// UnityEngine.Transform UnityEngine.RaycastHit::get_transform()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * RaycastHit_get_transform_m2DD983DBD3602DE848DE287EE5233FD02EEC608D (RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * __this, const RuntimeMethod* method);
 // !!0 UnityEngine.Component::GetComponent<UnityEngine.MeshRenderer>()
 inline MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537 (Component_t62FBC8D2420DA4BE9037AFE430740F6B3EECA684 * __this, const RuntimeMethod* method)
 {
@@ -1745,8 +1721,10 @@ inline MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * Component_GetCom
 }
 // UnityEngine.Material UnityEngine.Renderer::get_material()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Material_t8927C00353A72755313F046D0CE85178AE8218EE * Renderer_get_material_mE6B01125502D08EE0D6DFE2EAEC064AD9BB31804 (Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * __this, const RuntimeMethod* method);
-// System.Void UnityEngine.Color::.ctor(System.Single,System.Single,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Color__ctor_m9FEDC8486B9D40C01BF10FDC821F5E76C8705494 (Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * __this, float ___r0, float ___g1, float ___b2, const RuntimeMethod* method);
+// UnityEngine.Color UnityEngine.Material::get_color()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  Material_get_color_m7926F7BE68B4D000306738C1EAABEB7ADFB97821 (Material_t8927C00353A72755313F046D0CE85178AE8218EE * __this, const RuntimeMethod* method);
+// UnityEngine.Transform UnityEngine.RaycastHit::get_transform()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * RaycastHit_get_transform_m2DD983DBD3602DE848DE287EE5233FD02EEC608D (RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Material::set_color(UnityEngine.Color)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Material_set_color_mC3C88E2389B7132EBF3EB0D1F040545176B795C0 (Material_t8927C00353A72755313F046D0CE85178AE8218EE * __this, Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  ___value0, const RuntimeMethod* method);
 // UnityEngine.Color UnityEngine.Color::get_white()
@@ -2550,7 +2528,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void brush_physics_Start_m2EB8F54DD105A1794B7
 		NullCheck(L_0);
 		MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * L_1;
 		L_1 = GameObject_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m4E244CD0EBBF9E0A3A73AF14F6EC434CA82E6F4B(L_0, /*hidden argument*/GameObject_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m4E244CD0EBBF9E0A3A73AF14F6EC434CA82E6F4B_RuntimeMethod_var);
-		__this->set_capsuleColor_6(L_1);
+		__this->set_capsuleColor_9(L_1);
+		// targetColor = new Color(1.0f ,1.0f ,1.0f ,1.0f);
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_2;
+		memset((&L_2), 0, sizeof(L_2));
+		Color__ctor_m679019E6084BF7A6F82590F66F5F695F6A50ECC5((&L_2), (1.0f), (1.0f), (1.0f), (1.0f), /*hidden argument*/NULL);
+		__this->set_targetColor_7(L_2);
 		// }
 		return;
 	}
@@ -2561,9 +2544,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void brush_physics_Update_m90E7442BB940B07F41
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEE6ACA91382FDBD299B9F2D89951873E75ED4B6E);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -2583,110 +2566,151 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void brush_physics_Update_m90E7442BB940B07F41
 		L_5 = Physics_Raycast_m18E12C65F127D1AA50D196623F04F81CB138FD12(L_1, L_3, (RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_4, (0.200000003f), /*hidden argument*/NULL);
 		if (!L_5)
 		{
-			goto IL_010d;
+			goto IL_011e;
 		}
 	}
 	{
-		// color_B += updateColor;
-		float L_6 = __this->get_color_B_9();
-		float L_7 = __this->get_updateColor_10();
-		__this->set_color_B_9(((float)il2cpp_codegen_add((float)L_6, (float)L_7)));
-		// color_G += updateColor;
-		float L_8 = __this->get_color_G_8();
-		float L_9 = __this->get_updateColor_10();
-		__this->set_color_G_8(((float)il2cpp_codegen_add((float)L_8, (float)L_9)));
-		// color_R += updateColor;
-		float L_10 = __this->get_color_R_7();
-		float L_11 = __this->get_updateColor_10();
-		__this->set_color_R_7(((float)il2cpp_codegen_add((float)L_10, (float)L_11)));
 		// Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.red);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_12;
-		L_12 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
-		NullCheck(L_12);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_13;
-		L_13 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_12, /*hidden argument*/NULL);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_14;
-		L_14 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
-		NullCheck(L_14);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_15;
-		L_15 = Transform_get_forward_mD850B9ECF892009E3485408DC0D375165B7BF053(L_14, /*hidden argument*/NULL);
-		RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * L_16 = __this->get_address_of_hitInfo_4();
-		float L_17;
-		L_17 = RaycastHit_get_distance_m85FCA98D7957C3BF1D449CA1B48C116CCD6226FA((RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_16, /*hidden argument*/NULL);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_18;
-		L_18 = Vector3_op_Multiply_m9EA3D18290418D7B410C7D11C4788C13BFD2C30A_inline(L_15, L_17, /*hidden argument*/NULL);
-		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_19;
-		L_19 = Color_get_red_m9BD55EBF7A74A515330FA5F7AC7A67C8A8913DD8(/*hidden argument*/NULL);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_6;
+		L_6 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
+		NullCheck(L_6);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_7;
+		L_7 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_6, /*hidden argument*/NULL);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_8;
+		L_8 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
+		NullCheck(L_8);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_9;
+		L_9 = Transform_get_forward_mD850B9ECF892009E3485408DC0D375165B7BF053(L_8, /*hidden argument*/NULL);
+		RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * L_10 = __this->get_address_of_hitInfo_4();
+		float L_11;
+		L_11 = RaycastHit_get_distance_m85FCA98D7957C3BF1D449CA1B48C116CCD6226FA((RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_10, /*hidden argument*/NULL);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_12;
+		L_12 = Vector3_op_Multiply_m9EA3D18290418D7B410C7D11C4788C13BFD2C30A_inline(L_9, L_11, /*hidden argument*/NULL);
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_13;
+		L_13 = Color_get_red_m9BD55EBF7A74A515330FA5F7AC7A67C8A8913DD8(/*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		Debug_DrawRay_m918D1131BACEBD7CCEA9D9BFDF3279F6CD56E121(L_13, L_18, L_19, /*hidden argument*/NULL);
-		// objectName = hitInfo.collider.name;
-		RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * L_20 = __this->get_address_of_hitInfo_4();
-		Collider_t5E81E43C2ECA0209A7C4528E84A632712D192B02 * L_21;
-		L_21 = RaycastHit_get_collider_m13A3DE16FBC631E0A1F987E0B22CE70AF8AB539E((RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_20, /*hidden argument*/NULL);
-		NullCheck(L_21);
-		String_t* L_22;
-		L_22 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_21, /*hidden argument*/NULL);
-		__this->set_objectName_11(L_22);
-		// Debug.Log("hit point: " + hitInfo.collider.name);
-		RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * L_23 = __this->get_address_of_hitInfo_4();
-		Collider_t5E81E43C2ECA0209A7C4528E84A632712D192B02 * L_24;
-		L_24 = RaycastHit_get_collider_m13A3DE16FBC631E0A1F987E0B22CE70AF8AB539E((RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_23, /*hidden argument*/NULL);
-		NullCheck(L_24);
-		String_t* L_25;
-		L_25 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_24, /*hidden argument*/NULL);
-		String_t* L_26;
-		L_26 = String_Concat_m4B4AB72618348C5DFBFBA8DED84B9E2EBDB55E1B(_stringLiteralEE6ACA91382FDBD299B9F2D89951873E75ED4B6E, L_25, /*hidden argument*/NULL);
-		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_26, /*hidden argument*/NULL);
-		// hitInfo.transform.GetComponent<MeshRenderer>().material.color = new Color(color_R / 255, color_G / 255, color_B / 255);
-		RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * L_27 = __this->get_address_of_hitInfo_4();
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_28;
-		L_28 = RaycastHit_get_transform_m2DD983DBD3602DE848DE287EE5233FD02EEC608D((RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_27, /*hidden argument*/NULL);
-		NullCheck(L_28);
-		MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * L_29;
-		L_29 = Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537(L_28, /*hidden argument*/Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537_RuntimeMethod_var);
-		NullCheck(L_29);
-		Material_t8927C00353A72755313F046D0CE85178AE8218EE * L_30;
-		L_30 = Renderer_get_material_mE6B01125502D08EE0D6DFE2EAEC064AD9BB31804(L_29, /*hidden argument*/NULL);
-		float L_31 = __this->get_color_R_7();
-		float L_32 = __this->get_color_G_8();
-		float L_33 = __this->get_color_B_9();
-		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_34;
-		memset((&L_34), 0, sizeof(L_34));
-		Color__ctor_m9FEDC8486B9D40C01BF10FDC821F5E76C8705494((&L_34), ((float)((float)L_31/(float)(255.0f))), ((float)((float)L_32/(float)(255.0f))), ((float)((float)L_33/(float)(255.0f))), /*hidden argument*/NULL);
-		NullCheck(L_30);
-		Material_set_color_mC3C88E2389B7132EBF3EB0D1F040545176B795C0(L_30, L_34, /*hidden argument*/NULL);
+		Debug_DrawRay_m918D1131BACEBD7CCEA9D9BFDF3279F6CD56E121(L_7, L_12, L_13, /*hidden argument*/NULL);
+		// initialColor = hitInfo.collider.GetComponent<MeshRenderer>().material.color;
+		RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * L_14 = __this->get_address_of_hitInfo_4();
+		Collider_t5E81E43C2ECA0209A7C4528E84A632712D192B02 * L_15;
+		L_15 = RaycastHit_get_collider_m13A3DE16FBC631E0A1F987E0B22CE70AF8AB539E((RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_14, /*hidden argument*/NULL);
+		NullCheck(L_15);
+		MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * L_16;
+		L_16 = Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537(L_15, /*hidden argument*/Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537_RuntimeMethod_var);
+		NullCheck(L_16);
+		Material_t8927C00353A72755313F046D0CE85178AE8218EE * L_17;
+		L_17 = Renderer_get_material_mE6B01125502D08EE0D6DFE2EAEC064AD9BB31804(L_16, /*hidden argument*/NULL);
+		NullCheck(L_17);
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_18;
+		L_18 = Material_get_color_m7926F7BE68B4D000306738C1EAABEB7ADFB97821(L_17, /*hidden argument*/NULL);
+		__this->set_initialColor_6(L_18);
+		// Debug.Log(initialColor);
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_19 = __this->get_initialColor_6();
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_20 = L_19;
+		RuntimeObject * L_21 = Box(Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659_il2cpp_TypeInfo_var, &L_20);
+		Debug_Log_mC26E5AD0D8D156C7FFD173AA15827F69225E9DB8(L_21, /*hidden argument*/NULL);
+		// if(initialColor.r <= 1.0f) {
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * L_22 = __this->get_address_of_initialColor_6();
+		float L_23 = L_22->get_r_0();
+		if ((!(((float)L_23) <= ((float)(1.0f)))))
+		{
+			goto IL_00b1;
+		}
+	}
+	{
+		// initialColor.r += 0.005f;
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * L_24 = __this->get_address_of_initialColor_6();
+		float* L_25 = L_24->get_address_of_r_0();
+		float* L_26 = L_25;
+		float L_27 = *((float*)L_26);
+		*((float*)L_26) = (float)((float)il2cpp_codegen_add((float)L_27, (float)(0.00499999989f)));
+	}
+
+IL_00b1:
+	{
+		// if (initialColor.g <= 1.0f){
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * L_28 = __this->get_address_of_initialColor_6();
+		float L_29 = L_28->get_g_1();
+		if ((!(((float)L_29) <= ((float)(1.0f)))))
+		{
+			goto IL_00d7;
+		}
+	}
+	{
+		// initialColor.g += 0.005f;
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * L_30 = __this->get_address_of_initialColor_6();
+		float* L_31 = L_30->get_address_of_g_1();
+		float* L_32 = L_31;
+		float L_33 = *((float*)L_32);
+		*((float*)L_32) = (float)((float)il2cpp_codegen_add((float)L_33, (float)(0.00499999989f)));
+	}
+
+IL_00d7:
+	{
+		// if(initialColor.b<= 1.0f){
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * L_34 = __this->get_address_of_initialColor_6();
+		float L_35 = L_34->get_b_2();
+		if ((!(((float)L_35) <= ((float)(1.0f)))))
+		{
+			goto IL_00fd;
+		}
+	}
+	{
+		// initialColor.b += 0.005f;
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * L_36 = __this->get_address_of_initialColor_6();
+		float* L_37 = L_36->get_address_of_b_2();
+		float* L_38 = L_37;
+		float L_39 = *((float*)L_38);
+		*((float*)L_38) = (float)((float)il2cpp_codegen_add((float)L_39, (float)(0.00499999989f)));
+	}
+
+IL_00fd:
+	{
+		// hitInfo.transform.GetComponent<MeshRenderer>().material.color = initialColor;
+		RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 * L_40 = __this->get_address_of_hitInfo_4();
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_41;
+		L_41 = RaycastHit_get_transform_m2DD983DBD3602DE848DE287EE5233FD02EEC608D((RaycastHit_t59E5AEC8FE13BFA2ACBB6FFBDB7585FFB7288F89 *)L_40, /*hidden argument*/NULL);
+		NullCheck(L_41);
+		MeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B * L_42;
+		L_42 = Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537(L_41, /*hidden argument*/Component_GetComponent_TisMeshRenderer_tCD983A2F635E12BCB0BAA2E635D96A318757908B_m87EEABB28FFB9E9553015DD36B7C6F7C45A7F537_RuntimeMethod_var);
+		NullCheck(L_42);
+		Material_t8927C00353A72755313F046D0CE85178AE8218EE * L_43;
+		L_43 = Renderer_get_material_mE6B01125502D08EE0D6DFE2EAEC064AD9BB31804(L_42, /*hidden argument*/NULL);
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_44 = __this->get_initialColor_6();
+		NullCheck(L_43);
+		Material_set_color_mC3C88E2389B7132EBF3EB0D1F040545176B795C0(L_43, L_44, /*hidden argument*/NULL);
 		// }
 		return;
 	}
 
-IL_010d:
+IL_011e:
 	{
 		// Debug.DrawRay(transform.position, transform.forward * 0.2f, Color.red);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_35;
-		L_35 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
-		NullCheck(L_35);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_36;
-		L_36 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_35, /*hidden argument*/NULL);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_37;
-		L_37 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
-		NullCheck(L_37);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_38;
-		L_38 = Transform_get_forward_mD850B9ECF892009E3485408DC0D375165B7BF053(L_37, /*hidden argument*/NULL);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_39;
-		L_39 = Vector3_op_Multiply_m9EA3D18290418D7B410C7D11C4788C13BFD2C30A_inline(L_38, (0.200000003f), /*hidden argument*/NULL);
-		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_40;
-		L_40 = Color_get_red_m9BD55EBF7A74A515330FA5F7AC7A67C8A8913DD8(/*hidden argument*/NULL);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_45;
+		L_45 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
+		NullCheck(L_45);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_46;
+		L_46 = Transform_get_position_m40A8A9895568D56FFC687B57F30E8D53CB5EA341(L_45, /*hidden argument*/NULL);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_47;
+		L_47 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
+		NullCheck(L_47);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_48;
+		L_48 = Transform_get_forward_mD850B9ECF892009E3485408DC0D375165B7BF053(L_47, /*hidden argument*/NULL);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_49;
+		L_49 = Vector3_op_Multiply_m9EA3D18290418D7B410C7D11C4788C13BFD2C30A_inline(L_48, (0.200000003f), /*hidden argument*/NULL);
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_50;
+		L_50 = Color_get_red_m9BD55EBF7A74A515330FA5F7AC7A67C8A8913DD8(/*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
-		Debug_DrawRay_m918D1131BACEBD7CCEA9D9BFDF3279F6CD56E121(L_36, L_39, L_40, /*hidden argument*/NULL);
+		Debug_DrawRay_m918D1131BACEBD7CCEA9D9BFDF3279F6CD56E121(L_46, L_49, L_50, /*hidden argument*/NULL);
 		// capsuleColor.material.color = Color.white;
-		Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * L_41 = __this->get_capsuleColor_6();
-		NullCheck(L_41);
-		Material_t8927C00353A72755313F046D0CE85178AE8218EE * L_42;
-		L_42 = Renderer_get_material_mE6B01125502D08EE0D6DFE2EAEC064AD9BB31804(L_41, /*hidden argument*/NULL);
-		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_43;
-		L_43 = Color_get_white_mB21E47D20959C3AEC41AF8BA04F63AC89FAF319E(/*hidden argument*/NULL);
-		NullCheck(L_42);
-		Material_set_color_mC3C88E2389B7132EBF3EB0D1F040545176B795C0(L_42, L_43, /*hidden argument*/NULL);
+		Renderer_t58147AB5B00224FE1460FD47542DC0DA7EC9378C * L_51 = __this->get_capsuleColor_9();
+		NullCheck(L_51);
+		Material_t8927C00353A72755313F046D0CE85178AE8218EE * L_52;
+		L_52 = Renderer_get_material_mE6B01125502D08EE0D6DFE2EAEC064AD9BB31804(L_51, /*hidden argument*/NULL);
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_53;
+		L_53 = Color_get_white_mB21E47D20959C3AEC41AF8BA04F63AC89FAF319E(/*hidden argument*/NULL);
+		NullCheck(L_52);
+		Material_set_color_mC3C88E2389B7132EBF3EB0D1F040545176B795C0(L_52, L_53, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -2695,14 +2719,6 @@ IL_010d:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void brush_physics__ctor_mD6FAFBF484E4F8632FBE9CCC4DC5F97ED6177C77 (brush_physics_t562D020522CE8E15FE93E325BA01782F4F64760F * __this, const RuntimeMethod* method)
 {
 	{
-		// float color_R = 214.0f;
-		__this->set_color_R_7((214.0f));
-		// float color_G = 182.0f;
-		__this->set_color_G_8((182.0f));
-		// float color_B = 110.0f;
-		__this->set_color_B_9((110.0f));
-		// float updateColor = 0.5f;
-		__this->set_updateColor_10((0.5f));
 		MonoBehaviour__ctor_mC0995D847F6A95B1A553652636C38A2AA8B13BED(__this, /*hidden argument*/NULL);
 		return;
 	}
