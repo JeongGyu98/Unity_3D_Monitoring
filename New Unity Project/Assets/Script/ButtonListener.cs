@@ -69,6 +69,38 @@ public class ButtonListener : MonoBehaviour
                 anim.Play("brush_down_R_O");
                 textPlaying.text = "오른쪽 아래 바깥면 " + count;
                 break;    
+            case 9:
+                anim.Play("brush_up_R_O");
+                textPlaying.text = "오른쪽 위 바깥면 " + count;
+                break;
+            case 10:
+                anim.Play("brush_up_R");
+                textPlaying.text = "오른쪽 위 씹는면 " + count;
+                break;
+            case 11:
+                anim.Play("brush_up_R_I");
+                textPlaying.text = "오른쪽 위 안쪽면 " + count;
+                break;
+            case 12:
+                anim.Play("brush_up_F_I");
+                textPlaying.text = "앞쪽 위 안쪽면 " + count;
+                break;
+            case 13:
+                anim.Play("brush_up_F_O");
+                textPlaying.text = "앞쪽 위 바깥면 " + count;
+                break;    
+            case 14:
+                anim.Play("brush_up_L_I");
+                textPlaying.text = "왼쪽 위 안쪽면 " + count;
+                break;
+            case 15:
+                anim.Play("brush_up_L");
+                textPlaying.text = "왼쪽 위 씹는면 " + count;
+                break;    
+            case 16:
+                anim.Play("brush_up_L_O");
+                textPlaying.text = "왼쪽 위 바깥면" + count;
+                break;    
             default : 
                 Debug.Log("default case");
                 break;

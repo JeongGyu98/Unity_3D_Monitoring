@@ -24,22 +24,21 @@ public class brush_physics : MonoBehaviour
     void Update()
     {
 
-        if(Physics.Raycast(transform.position,  transform.forward, out hitInfo, 0.2f))
+        if(Physics.Raycast(transform.position,  transform.forward, out hitInfo, 0.3f))
         {
-             Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.red);
+            Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.red);
             
-
             initialColor = hitInfo.collider.GetComponent<MeshRenderer>().material.color;
             Debug.Log(initialColor);
            
             if(initialColor.r <= 1.0f) {
-                initialColor.r += 0.005f;
+                initialColor.r += 0.015f;
             } 
             if (initialColor.g <= 1.0f){
-                initialColor.g += 0.005f;
+                initialColor.g += 0.015f;
             }
             if(initialColor.b<= 1.0f){
-                initialColor.b += 0.005f;
+                initialColor.b += 0.015f;
             }
 
             hitInfo.transform.GetComponent<MeshRenderer>().material.color = initialColor;
